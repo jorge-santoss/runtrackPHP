@@ -30,3 +30,14 @@ if(isset($_GET)){
     </main>
 </body>
 </html>
+
+
+<?php
+
+// Count the number of GET arguments
+$numArgs = count($_GET);
+
+// Display the number of GET arguments
+echo "Number of GET arguments: " . $numArgs;
+
+?>

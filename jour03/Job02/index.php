@@ -10,3 +10,5 @@ for ($i = 0; $i < strlen($str); $i += 2) {
 echo $result;
 
 ?>
+
+
