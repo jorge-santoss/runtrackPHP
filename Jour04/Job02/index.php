@@ -1,21 +1,32 @@
 <?php
 
-// Check if there are any GET arguments
-if (!empty($_GET)) {
-    // Start the HTML table
-    echo "<table border='1'>";
-    echo "<thead><tr><th>Argument</th><th>Value</th></tr></thead>";
-    echo "<tbody>";
+echo "<table border='1'>";
+echo "<tr><th>Argument</th><th>Valeur</th></tr>";
 
-    // Loop through each GET argument and display it in the table
-    foreach ($_GET as $key => $value) {
-        echo "<tr><td>" . htmlspecialchars($key) . "</td><td>" . htmlspecialchars($value) . "</td></tr>";
-    }
-
-    echo "</tbody>";
-    echo "</table>";
-} else {
-    echo "No GET arguments found.";
+foreach ($_GET as $key => $value) {
+    echo "<tr><td>" . htmlspecialchars($key) . "</td><td>" . htmlspecialchars($value) . "</td></tr>";
 }
 
+echo "</table>";
+
 ?>
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form action="index.php" method="get">
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="prenom" placeholder="Prénom">
+            <input type="text" name="ville" placeholder="Ville">
+            <input type="submit" value="Envoyer" class="button">
+        </form>
+    </main>
+</body>
+</html>

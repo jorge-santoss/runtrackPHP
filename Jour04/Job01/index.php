@@ -1,14 +1,19 @@
 <?php
-if(isset($_GET)){
-    if(isset($_GET)["nom"]))
+if (isset($_GET)) {
+    if (isset($_GET["nom"])) {
+        // Uncomment or remove var_dump($_GET) as needed
+        // var_dump($_GET);
 
-    // var_dump($_GET);
-
-
-
-    foreach ($_GET as $key => $value) {
-        echo $key. " : " . $value;
+        foreach ($_GET as $key => $value) {
+            echo $key . " : " . $value . "<br>";
+        }
     }
+
+    // Count the number of GET arguments
+    $numArgs = count($_GET);
+
+    // Display the number of GET arguments
+    echo "Number of GET arguments: " . $numArgs;
 }
 ?>
 
@@ -22,22 +27,11 @@ if(isset($_GET)){
 <body>
     <main>
         <form action="index.php" method="get">
-            <input type="text" name="nom">
-            <input type="text" name="prenom">
-            <input type="text">
-            <input type="text" name="submit" value="submit">
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="prenom" placeholder="Prénom">
+            <input type="text" name="ville" placeholder="Ville">
+            <input type="submit" value="Envoyer" class="button">
         </form>
     </main>
 </body>
 </html>
-
-
-<?php
-
-// Count the number of GET arguments
-$numArgs = count($_GET);
-
-// Display the number of GET arguments
-echo "Number of GET arguments: " . $numArgs;
-
-?>

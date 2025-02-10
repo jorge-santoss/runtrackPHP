@@ -4,7 +4,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=jour10;charset=utf8', 'root', '');
  
 /*var_dump($pdo);*/
 
-$sql = ("SELECT COUNT(id) FROM `etudiants`;");
+$sql = ("SELECT * FROM `etudiants` WHERE `naissance` BETWEEN '2007-01-24' AND '2025-01-25';");
 
 $query = $pdo -> prepare ("$sql");
 
@@ -43,7 +43,11 @@ $pdo = $query->fetchALL(PDO::FETCH_ASSOC);
     <table>
     <thead>
         <tr>
-        <th>Nombre d'etudiants</th>
+        <th>Prenom</th>
+        <th>Nom</th>
+        <th>Naissance</th>
+        <th>Sexe</th>
+        <th>Email</th>
         </tr>
     </thead>
 <tbody>
@@ -51,8 +55,11 @@ $pdo = $query->fetchALL(PDO::FETCH_ASSOC);
 <?php
 foreach ($pdo as $array){
     echo "<tr>
-<td>{$array['nb_etudiants']}</td>
-
+<td>{$array['prenom']}</td>
+<td>{$array['nom']}</td>
+<td>{$array['naissance']}</td>
+<td>{$array['sexe']}</td>
+<td>{$array['email']}</td>
 </tr>";
 }
 
